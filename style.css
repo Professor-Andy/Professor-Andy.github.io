@@ -115,9 +115,7 @@ nav{
 
 /* MOBILE ONLY */
 @media (max-width: 768px) {
-    *{
-      font-size: 16px;
-    }
+
     .hamburger {
         display: flex; /* show hamburger */
     }
@@ -154,10 +152,7 @@ nav{
 	    /*width: 90%;	*/
 	    margin: 0;
     }
-    p,h1 {
-      padding: 1rem;
-      margin-block: 1rem;
-    }
+
 }
 
 .shadow {
