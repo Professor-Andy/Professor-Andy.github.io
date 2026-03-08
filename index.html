@@ -7,9 +7,18 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!--
 <nav aria-label="Main navigation">
     <a href="index.html" class="nav-hover nav-title"><img src="assets/logo.jpeg" alt=""></a>
-    <ol class="nav-list">
+
+	<div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ol class="nav-list" id="navList">
 	<li class="nav-hover">
 	    <a id="contact" onclick="Navigation('contact', 'Pages/Contact.html')">Contact</a>
 	</li>
@@ -22,6 +31,26 @@
 	<li class="nav-hover">
 	    <a id="info" onclick="Navigation('info', 'Pages/Info.html')">Info</a>
 	</li>
+    </ol>
+</nav>
+-->
+
+<nav aria-label="Main navigation">
+    <a href="index.html" class="nav-hover nav-title">
+        <img src="assets/logo.jpeg" alt="">
+    </a>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ol class="nav-list" id="navList">
+        <li class="nav-hover"><a id="contact" onclick="Navigation('contact', 'Pages/Contact.html')">Contact</a></li>
+        <li class="nav-hover"><a id="donate" onclick="Navigation('donate', 'Pages/Donate.html')">Donate</a></li>
+        <li class="nav-hover"><a id="volunteer" onclick="Navigation('volunteer', 'Pages/Volunteer.html')">Volunteer</a></li>
+        <li class="nav-hover"><a id="info" onclick="Navigation('info', 'Pages/Info.html')">Info</a></li>
     </ol>
 </nav>
 
@@ -87,31 +116,11 @@
 	    "obvoiusly we need detailed instructions for parking to go with map" 
 	)
     }
-    fn();
-
-
-function Navigation(id, pagePath) {
-    const ids = ['contact', 'donate', 'volunteer', 'info'];
-
-    // remove active from all nav items
-    ids.forEach(navId => {
-        document.getElementById(navId).classList.remove("active");
-    });
-
-    // add active to the clicked one
-    document.getElementById(id).classList.add("active");
-
-    // load the new page content
-    fetch(pagePath)
-        .then(res => res.text())
-        .then(html => {
-            document.getElementById("Page").innerHTML = html;
-	    initCarousel();
-        });
-}
+    //fn();
 </script>
 
-<script src="image-slider.js"></script>
+<script src="scripts/image-slider.js"></script>
+<script src="scripts/Navigation.js"></script>
 
 <script>
     Navigation('info', 'Pages/Info.html');
@@ -134,6 +143,23 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     // Open the user's email client
     window.location.href = mailtoLink;
 });
+
+
+
+
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navList = document.getElementById("navList");
+
+    hamburger.addEventListener("click", () => {
+        navList.classList.toggle("show");
+    });
+});
+
 </script>
 
 </body>
