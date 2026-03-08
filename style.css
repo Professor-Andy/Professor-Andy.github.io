@@ -153,6 +153,7 @@ nav{
 	    margin: 0;
     }
     p, h1 {
+      font-size: 16px;
       padding-inline: 2rem;
     }
 
