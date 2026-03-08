@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Wall That Heals Lacey</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav aria-label="Main navigation">
+    <a href="index.html" class="nav-hover nav-title"><img src="assets/logo.jpeg" alt=""></a>
+    <ol class="nav-list">
+	<li class="nav-hover">
+	    <a id="contact" onclick="Navigation('contact', 'Pages/Contact.html')">Contact</a>
+	</li>
+	<li class="nav-hover">
+	    <a id="donate" onclick="Navigation('donate', 'Pages/Donate.html')">Donate</a>
+	</li>
+	<li class="nav-hover">
+	    <a id="volunteer" onclick="Navigation('volunteer', 'Pages/Volunteer.html')">Volunteer</a>
+	</li>
+	<li class="nav-hover">
+	    <a id="info" onclick="Navigation('info', 'Pages/Info.html')">Info</a>
+	</li>
+    </ol>
+</nav>
+
+
+<div id="Page"></div>
+
+<style>
+    footer{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	color: white;
+	min-height: 20vh;
+	width: 100%;
+	margin-top: 2rem;
+	div {
+	    height: 100%;
+	    padding: 2rem;
+	    width: 100%;
+	    border-inline: 1px solid white;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	}
+
+	div:first-child{
+	    border-left: 0;	 
+	}
+	div:last-child{
+	    border-right: 0;	 
+	}
+    }
+</style>
+
+<footer>
+    <div>
+    	<p>what</p>
+	<p>in</p>
+    </div>
+    <div>
+    	<p>to</p>
+	<p>footer</p>
+    </div>
+    <div>
+    	<p>put</p>
+	<p>?</p>
+    </div>
+</footer>
+
+
+
+<script>
+    const fn = () => { 
+	alert(
+	    "TODO'S\n\n\n" +
+	    "get better font.\n" +
+	    "what else do we want\n?" +
+	    "what are the volunteer positions?\n"+
+	    "Need contact inf0\n" +
+	    "Need Donation info\n" +
+	    "do you want page to send you an email of volunteer?\n" +
+	    "jorge send me the location and make a map of it with where you want people to park\n"+
+	    "obvoiusly we need detailed instructions for parking to go with map" 
+	)
+    }
+    fn();
+
+
+function Navigation(id, pagePath) {
+    const ids = ['contact', 'donate', 'volunteer', 'info'];
+
+    // remove active from all nav items
+    ids.forEach(navId => {
+        document.getElementById(navId).classList.remove("active");
+    });
+
+    // add active to the clicked one
+    document.getElementById(id).classList.add("active");
+
+    // load the new page content
+    fetch(pagePath)
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("Page").innerHTML = html;
+	    initCarousel();
+        });
+}
+</script>
+
+<script src="image-slider.js"></script>
+
+<script>
+    Navigation('info', 'Pages/Info.html');
+</script>
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload
+
+    const message = document.getElementById("msg").value;
+
+    // Replace with your email address
+    const emailTo = "youremail@example.com";
+
+    // Build the mailto link
+    const mailtoLink =
+        `mailto:${emailTo}?subject=Message from Website&body=${encodeURIComponent(message)}`;
+
+    // Open the user's email client
+    window.location.href = mailtoLink;
+});
+</script>
+
+</body>
+</html>
