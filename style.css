@@ -153,7 +153,12 @@ nav{
 	    margin: 0;
     }
 
+    p,h1{
+      padding: 1rem;
+    }
 }
+
+
 
 .shadow {
     box-shadow: 1px -2px 26px 19px rgba(255,255,255,0.03);
@@ -305,4 +310,12 @@ main {
 
 strong{
     color: red;
+}
+
+
+.map-wrapper {
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
