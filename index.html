@@ -58,22 +58,6 @@
 <div id="Page"></div>
 
 
-<script>
-    const fn = () => { 
-	alert(
-	    "TODO'S\n\n\n" +
-	    "get better font.\n" +
-	    "what else do we want\n?" +
-	    "what are the volunteer positions?\n"+
-	    "Need contact inf0\n" +
-	    "Need Donation info\n" +
-	    "do you want page to send you an email of volunteer?\n" +
-	    "jorge send me the location and make a map of it with where you want people to park\n"+
-	    "obvoiusly we need detailed instructions for parking to go with map" 
-	)
-    }
-    //fn();
-</script>
 
 <script src="scripts/image-slider.js"></script>
 <script src="scripts/Navigation.js"></script>
@@ -81,24 +65,6 @@
 <script>
     Navigation('info', 'Pages/Info.html');
 </script>
-
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop page reload
-
-    const message = document.getElementById("msg").value;
-
-    // Replace with your email address
-    const emailTo = "youremail@example.com";
-
-    // Build the mailto link
-    const mailtoLink =
-        `mailto:${emailTo}?subject=Message from Website&body=${encodeURIComponent(message)}`;
-
-    // Open the user's email client
-    window.location.href = mailtoLink;
-});
 
 
 
