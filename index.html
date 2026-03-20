@@ -8,32 +8,6 @@
 </head>
 <body>
 
-<!--
-<nav aria-label="Main navigation">
-    <a href="index.html" class="nav-hover nav-title"><img src="assets/logo.jpeg" alt=""></a>
-
-	<div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-    <ol class="nav-list" id="navList">
-	<li class="nav-hover">
-	    <a id="contact" onclick="Navigation('contact', 'Pages/Contact.html')">Contact</a>
-	</li>
-	<li class="nav-hover">
-	    <a id="donate" onclick="Navigation('donate', 'Pages/Donate.html')">Donate</a>
-	</li>
-	<li class="nav-hover">
-	    <a id="volunteer" onclick="Navigation('volunteer', 'Pages/Volunteer.html')">Volunteer</a>
-	</li>
-	<li class="nav-hover">
-	    <a id="info" onclick="Navigation('info', 'Pages/Info.html')">Info</a>
-	</li>
-    </ol>
-</nav>
--->
 
 <nav aria-label="Main navigation">
     <a href="index.html" class="nav-hover nav-title">
@@ -67,21 +41,24 @@
 </script>
 
 
-
-
-</script>
-
 <script>
-
 document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.getElementById("hamburger");
     const navList = document.getElementById("navList");
+    const navLinks = navList.querySelectorAll("a");
 
+    // Toggle menu open/close
     hamburger.addEventListener("click", () => {
         navList.classList.toggle("show");
     });
-});
 
+    // Close menu when any link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navList.classList.remove("show");
+        });
+    });
+});
 </script>
 
 </body>
