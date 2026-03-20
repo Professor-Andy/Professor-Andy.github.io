@@ -7,29 +7,57 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		margin-top: 5rem;
 		.icons{
 			display: flex;
 			flex-direction: row;
 			
-			>*{
-				padding-inline: 1rem;
-			}
+		}
+		h1
+		{
+			font-size: xx-large;
 		}
 		img
 		{
+			margin: 5rem;
 			width: 5rem;
 		}
+		
+		@media (max-width: 768px) {
+			margin-top: 1rem;
+			.icons
+			{
+				flex-direction: column;
+			}
+			img
+			{
+				width: 3rem;
+				margin: 1rem;
+			}
+		
+		}
 	}
+
+
+
 </style>
 
 <div class="contact">
 
-<p>Come find us at</p>
+<h1>Come find us at</h1>
 
     <div class="icons">
         <!-- Simple icons (you can replace these with your own images if you prefer) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+		<a href="https://www.facebook.com/profile.php?id=61582242276212">
+        	<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+		</a>
+		<a href="https://www.instagram.com/thewallthathealslaceywa/">
+        	<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+		</a>
+		<a href="mailto:thewallthathealslaceywa@gmail.com">
+        	<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+		</a>
     </div>
+
+	<p>thewallthathealslaceywa@gmail.com</p>
 </div>
