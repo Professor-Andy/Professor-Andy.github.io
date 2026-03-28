@@ -139,24 +139,25 @@ nav{
 
 
 
-.first-section{
+/* FIX MAP OVERLAP ON MOBILE */
+.first-section {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 4rem);
-    width: 100%;
     align-items: center;
     text-align: center;
-    position: relative;
-    .cursive{
-	    height: 15rem;
-	    /*width: 90%;	*/
-	    margin: 0;
-    }
-    p, h1 {
-      font-size: 16px;
-      padding-inline: 2rem;
-    }
+    width: 100%;
+}
 
+/* VALID CSS VERSION OF WHAT YOU INTENDED */
+.first-section .cursive {
+    height: auto;
+    margin: 1rem 0;
+}
+
+.first-section p,
+.first-section h1 {
+    font-size: 16px;
+    padding-inline: 2rem;
 }
 
 
