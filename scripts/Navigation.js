@@ -25,7 +25,7 @@ function Navigation(id, pagePath) {
                 const iframe = document.createElement("iframe");
                 iframe.width = "75%";
                 iframe.height = "400";
-                iframe.src = "https://youtu.be/Vs1ljw5JPZ8";
+                iframe.src = "https://www.youtube-nocookie.com/embed/Vs1ljw5JPZ8";
                 iframe.title = "YouTube video player";
                 iframe.frameBorder = "0";
                 iframe.allow =
