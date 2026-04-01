@@ -1,6 +1,6 @@
 
 function Navigation(id, pagePath) {
-    const ids = ['contact', 'donate', 'volunteer', 'info'];
+    const ids = ['contact', 'donate', 'volunteer', 'info', 'inMemory', 'tour'];
 
     // remove active from all nav items
     ids.forEach(navId => {
