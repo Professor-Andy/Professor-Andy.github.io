@@ -5,6 +5,58 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TWTH Lacey</title>
 	<link rel="stylesheet" href="style.css">
+
+    <style>
+    /* 1. The Container hides anything that rolls off the screen */
+    .ticker-container {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      padding: 12px 0;
+      position: static;
+    }
+
+    /* 2. The Track holds both lists side-by-side */
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 45s linear infinite;
+    }
+
+    /* 3. The individual lists containing names and flags */
+    .ticker-list {
+      display: flex;
+      align-items: center;
+      gap: 2rem;          /* Space between items */
+      padding-right: 2rem; /* Matches gap to keep spacing uniform at the seam */
+    }
+
+    .ticker-item {
+      color: #ffffff;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.5rem;
+      font-weight: 500;
+      white-space: nowrap; /* Prevents names from wrapping to a new line */
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    /* 4. Infinite Loop Keyframes (shifts exactly half the track's width) */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Pause on hover so users can easily read a specific name */
+    .ticker-container:hover .ticker-track {
+      animation-play-state: paused;
+    }
+  </style>
 </head>
 <body>
 
@@ -20,6 +72,7 @@
         <span></span>
     </div>
 
+
     <ol class="nav-list" id="navList">
         <li class="nav-hover"><a id="contact" onclick="Navigation('contact', 'Pages/Contact.html')">Contact</a></li>
         <li class="nav-hover"><a id="donate" onclick="Navigation('donate', 'Pages/Donate.html')">Donate</a></li>
@@ -29,8 +82,68 @@
         <li class="nav-hover"><a id="inMemory" onclick="Navigation('inMemory', 'Pages/InMemory.html')">In Memory</a></li>
     </ol>
 </nav>
+    <p>specail thanks to all who've donated</p>
+<div class="ticker-container">
+    <div class="ticker-track">
+      
+      <!-- List 1 -->
+      <div class="ticker-list">
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Richard Yescas &amp; Pamela Castanon-Yescas</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Olympia Eagles Aerie #21</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Alan &amp; Cindy Hoover</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">The Steadman Family</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">The Kern Family</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">The Cedar Inn</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Gail E. Johnson</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Robert &amp; Sherry Houser</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">VFW Post #318 Olympia WA</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">VFW Post #7498 Port Hadlock WA</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">American Legion Post #94 Lacey WA</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Michelle Layton</span>
+        <span class="ticker-item">🇺🇸</span>
+      </div>
+      
+      <!-- List 2 (Exact Duplicate for Seamless Looping) -->
+      <div class="ticker-list">
+        <span class="ticker-item">Richard Yescas &amp; Pamela Castanon-Yescas</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Olympia Eagles Aerie #21</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Alan &amp; Cindy Hoover</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">The Steadman Family</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">The Kern Family</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">The Cedar Inn</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Gail E. Johnson</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Robert &amp; Sherry Houser</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">VFW Post #318 Olympia WA</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">VFW Post #7498 Port Hadlock WA</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">American Legion Post #94 Lacey WA</span>
+        <span class="ticker-item">🇺🇸</span>
+        <span class="ticker-item">Michelle Layton</span>
+      </div>
 
-
+    </div>
+  </div>
 <div id="Page"></div>
 
 
